@@ -204,7 +204,7 @@ const Hero = () => {
         >
           <span className="blueprint-label mb-4 block">Software Engineer based in Sri Lanka</span>
           <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface mb-6 leading-[1.1]">
-            Architecting <span className="text-primary">Robust</span> Digital Solutions.
+            Naveen Madhawa
           </h1>
           <p className="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
             Specializing in scalable backend systems and intuitive frontend experiences. I bridge the gap between complex engineering and elegant design.
