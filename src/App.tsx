@@ -225,7 +225,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="md:col-span-5 relative"
         >
-          <div className="aspect-square rounded-3xl overflow-hidden border-[12px] border-surface-container shadow-2xl relative z-10">
+          <div className="aspect-square rounded-3xl overflow-hidden border-12 border-surface-container shadow-2xl relative z-10">
             <img 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_GJK_1GV4JHXfDPk55PbT_Tly7N__Iils8sYnKZ_6pC6ckMNG3TV2vWacLiWU7fAjYqVSKjzXRisMMyIpzgnK2MwMebmbLF4r9dBGydzn3eLVGp1mp2kjxh0cDG4weHTGiM47hXsYBeUGHRgEo2Sz7P4u6oos9lcB7bDHrhxriBQpxECXadvHXQJxePKOvfT6kzV4V38qNFwaY3GFs22rTEXwGJryfST_rdDegcCPYqsUJvxzEDQ9uLFd_G4O0OFmokaa9SO7mNX" 
               alt="Professional Portrait" 
@@ -328,7 +328,7 @@ const Projects = () => {
             viewport={{ once: true }}
             className={`project-card flex flex-col ${project.size === 'large' ? 'md:col-span-2' : ''}`}
           >
-            <div className={`overflow-hidden ${project.size === 'large' ? 'aspect-video' : 'aspect-[4/3]'}`}>
+            <div className={`overflow-hidden ${project.size === 'large' ? 'aspect-video' : 'aspect-4/3'}`}>
               <img 
                 src={project.image} 
                 alt={project.title} 
@@ -336,7 +336,7 @@ const Projects = () => {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="p-8 flex flex-col flex-grow">
+            <div className="p-8 flex flex-col grow">
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-on-surface">{project.title}</h3>
