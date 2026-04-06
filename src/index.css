@@ -26,6 +26,27 @@
   body {
     @apply bg-surface text-on-surface font-sans antialiased;
   }
+
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --color-primary: #7eb6ff;
+    --color-primary-container: #2e7bc9;
+    --color-surface: #0f141a;
+    --color-surface-container-low: #161d25;
+    --color-surface-container-lowest: #1d2630;
+    --color-surface-container: #26313d;
+    --color-surface-container-highest: #334253;
+    --color-on-surface: #e8edf3;
+    --color-on-surface-variant: #b8c3cf;
+    --color-secondary-container: #1f3448;
+    --color-on-secondary-container: #d3e4f6;
+    --color-outline-variant: #4a5b70;
+    --color-inverse-surface: #f7f9fb;
+  }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight;

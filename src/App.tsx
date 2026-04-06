@@ -46,6 +46,8 @@ interface Experience {
   type: 'work' | 'education';
 }
 
+type Theme = 'light' | 'dark';
+
 // --- Data ---
 const PROJECTS: Project[] = [
   {
@@ -113,7 +115,12 @@ const EXPERIENCE: Experience[] = [
 
 // --- Components ---
 
-const Navbar = () => {
+interface NavbarProps {
+  theme: Theme;
+  onToggleTheme: () => void;
+}
+
+const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -148,15 +155,31 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <button className="p-2 rounded-full hover:bg-surface-container transition-colors">
-            <Moon size={18} className="text-on-surface-variant" />
+          <button
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            className="p-2 rounded-full hover:bg-surface-container transition-colors"
+          >
+            {theme === 'light' ? (
+              <Moon size={18} className="text-on-surface-variant" />
+            ) : (
+              <Sun size={18} className="text-on-surface-variant" />
+            )}
           </button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <button className="p-2 rounded-full hover:bg-surface-container transition-colors">
-            <Moon size={18} className="text-on-surface-variant" />
+          <button
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            className="p-2 rounded-full hover:bg-surface-container transition-colors"
+          >
+            {theme === 'light' ? (
+              <Moon size={18} className="text-on-surface-variant" />
+            ) : (
+              <Sun size={18} className="text-on-surface-variant" />
+            )}
           </button>
           <button onClick={() => setIsOpen(!isOpen)} className="text-on-surface">
             {isOpen ? <X /> : <Menu />}
@@ -497,9 +520,31 @@ const Footer = () => {
 };
 
 export default function App() {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') {
+      return 'light';
+    }
+
+    const storedTheme = window.localStorage.getItem('theme');
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      return storedTheme;
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    window.localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <div className="bg-surface min-h-screen selection:bg-primary-container selection:text-surface-container-lowest">
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero />
         <About />
