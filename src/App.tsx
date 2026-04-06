@@ -142,7 +142,7 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div className="text-xl font-black tracking-tighter text-on-surface">Architect.io</div>
+        <div className="text-xl font-black tracking-tighter text-on-surface">Naveen Madhawa</div>
         
         {/* Desktop Links */}
         <div className="hidden md:flex gap-8 items-center font-sans text-sm font-semibold tracking-tight">
@@ -504,7 +504,7 @@ const Footer = () => {
   return (
     <footer className="w-full py-12 border-t border-outline-variant/15 bg-surface-container-low">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="text-xl font-bold text-on-surface">Architect.io</div>
+        <div className="text-xl font-bold text-on-surface">Naveen Madhawa</div>
         <div className="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
           <a href="#" className="text-on-surface-variant hover:text-primary transition-colors">Github</a>
           <a href="#" className="text-on-surface-variant hover:text-primary transition-colors">Linkedin</a>
