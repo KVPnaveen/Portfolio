@@ -5,6 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import ImageStore from './components/ImageStore';
 import { 
   Menu, 
   X, 
@@ -22,8 +23,6 @@ import {
   Mail, 
   MapPin, 
   Send,
-  Upload,
-  RotateCcw,
   Linkedin,
   Twitter
 } from 'lucide-react';
@@ -50,7 +49,6 @@ interface Experience {
 
 type Theme = 'light' | 'dark';
 
-const PROFILE_IMAGE_STORAGE_KEY = 'profile-image';
 const DEFAULT_PROFILE_IMAGE = '/images/profile.jpg';
 
 // --- Data ---
@@ -235,59 +233,6 @@ const Hero = () => {
     return () => window.clearInterval(intervalId);
   }, [rotatingTitles.length]);
 
-  const [profileImage, setProfileImage] = useState<string>(() => {
-    if (typeof window === 'undefined') {
-      return DEFAULT_PROFILE_IMAGE;
-    }
-
-    return window.localStorage.getItem(PROFILE_IMAGE_STORAGE_KEY) || DEFAULT_PROFILE_IMAGE;
-  });
-  const [imageError, setImageError] = useState<string>('');
-
-  const handleProfileImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-
-    if (!file) {
-      return;
-    }
-
-    if (!file.type.startsWith('image/')) {
-      setImageError('Please select a valid image file.');
-      return;
-    }
-
-    const maxSizeBytes = 2 * 1024 * 1024;
-    if (file.size > maxSizeBytes) {
-      setImageError('Image is too large. Please use a file under 2MB.');
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = reader.result;
-      if (typeof result !== 'string') {
-        setImageError('Unable to read that image. Please try another file.');
-        return;
-      }
-
-      setProfileImage(result);
-      window.localStorage.setItem(PROFILE_IMAGE_STORAGE_KEY, result);
-      setImageError('');
-    };
-    reader.onerror = () => {
-      setImageError('Unable to read that image. Please try another file.');
-    };
-    reader.readAsDataURL(file);
-
-    event.target.value = '';
-  };
-
-  const resetProfileImage = () => {
-    setProfileImage(DEFAULT_PROFILE_IMAGE);
-    window.localStorage.removeItem(PROFILE_IMAGE_STORAGE_KEY);
-    setImageError('');
-  };
-
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-12 gap-12 items-center w-full">
@@ -324,39 +269,12 @@ const Hero = () => {
             <div className="profile-avatar-glow" />
             <div className="profile-avatar h-full w-full">
               <img 
-                src={profileImage}
+                src={DEFAULT_PROFILE_IMAGE}
                 alt="Naveen Madhawa" 
                 className="profile-avatar-image w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
-          </div>
-          <div className="mt-4 flex flex-wrap gap-3 items-center z-20 relative">
-            <label
-              htmlFor="profile-image-input"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-surface-container-lowest text-sm font-semibold cursor-pointer hover:opacity-90 transition-opacity"
-            >
-              <Upload size={16} />
-              Change Photo
-            </label>
-            <input
-              id="profile-image-input"
-              type="file"
-              accept="image/*"
-              onChange={handleProfileImageChange}
-              className="hidden"
-            />
-            <button
-              type="button"
-              onClick={resetProfileImage}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-outline-variant/30 text-on-surface-variant text-sm font-semibold hover:bg-surface-container-low transition-colors"
-            >
-              <RotateCcw size={16} />
-              Reset
-            </button>
-            {imageError && (
-              <p className="w-full text-sm text-red-500 font-medium">{imageError}</p>
-            )}
           </div>
           {/* Floating Badge */}
           <div className="absolute -bottom-6 -right-6 bg-surface-container-lowest p-5 rounded-2xl shadow-xl border border-outline-variant/10 hidden lg:block z-20">
@@ -651,6 +569,7 @@ export default function App() {
         <Hero />
         <About />
         <Projects />
+        <ImageStore />
         <ExperienceSection />
         <Contact />
       </main>
