@@ -22,6 +22,8 @@ import {
   Mail, 
   MapPin, 
   Send,
+  Upload,
+  RotateCcw,
   Linkedin,
   Twitter
 } from 'lucide-react';
@@ -48,39 +50,42 @@ interface Experience {
 
 type Theme = 'light' | 'dark';
 
+const PROFILE_IMAGE_STORAGE_KEY = 'profile-image';
+const DEFAULT_PROFILE_IMAGE = '/images/profile.jpg';
+
 // --- Data ---
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Fintech Pulse Dashboard",
-    description: "A real-time financial monitoring system built with Spring Boot microservices and React. Handles 10k+ transactions per minute.",
+    title: "Cloud Commerce Platform",
+    description: "Built a full-stack e-commerce platform for secure checkout, product management, and real-time inventory updates. Developed with React, Node.js, and PostgreSQL, then deployed with Docker on AWS. The platform improved operational efficiency and reduced order-processing delays.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzrUTjvXRMlQGQrFwJ8zWdJB9V6TR1EUQEKhKjmUFcyqzRXEEXomZk_AobArmDdKZEj91XZ6FoVktGZdDGYGfpbAD3XYBep3VpelmMzbC0F85Gx9MGraDN0i1jDzauRzrIi7kbC5hH49Ji9WXGSz-0UaHuizr5NBfLvOnNOQrVkSYGBfhVhjrzKUrd7PR0VhnqtdcMCqqd3Et2HkYcM5WYvCvagWDMExyZkor0va4xY62w_UevzEXixh42sBwmCrN8qlMO7Lu5FeUU",
-    tags: ["Spring Boot", "Kafka", "React"],
+    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     links: { demo: "#", github: "#" },
     size: 'large'
   },
   {
     id: 2,
-    title: "GraphNet Analyzer",
-    description: "A Python-based tool for analyzing social network clusters using machine learning algorithms.",
+    title: "Mobile Service Booking App",
+    description: "Developed a cross-platform app that allows users to discover, schedule, and manage service appointments in a few taps. Built with React Native, Firebase, and REST APIs for smooth performance and reliable notifications. The app increased booking completion rates and improved customer engagement.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDqfHx-nhmnUomkHuYOdgthxD115eGzsg2BhtwUD-hPMOlFK8xI223eSpItJJU0kYx_NejC06cALm9tt6yEzG1tMQNMURFDfk9zAv0vAW13ikgD13Uivm5uGZ6wfMJ4scNxMNPjCb-P1JF9-I24opSKsYCJc0OR8rH3Ek8TsMKSDOX548Sx6MMS24anqzjQFqzJfTOWeEdJYgXREnB_LH21uDsept-QIQITRJEEK-6CHC5JQmpnj8KHgooGjme1h36-3CscNC-Ga8Bq",
-    tags: ["Python", "Neo4j"],
+    tags: ["React Native", "Firebase", "REST API"],
     links: { demo: "#" }
   },
   {
     id: 3,
-    title: "API Orchestrator",
-    description: "Lightweight Node.js gateway for legacy system integration with modern mobile apps.",
+    title: "API Gateway & Integration Layer",
+    description: "Designed a scalable API gateway to unify internal and third-party services under one consistent interface. Implemented with Node.js, Express, Redis caching, and token-based authentication. This reduced integration complexity and improved response times for client applications.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBs5R9XvM43XQYZ1aIj-dQdAiqwfhwY6K4LZw7ffBmettr_plFvRGRFt9lTbNvswyGwYrZInN99kKYYbciRp_VCZJnb44MWYH9zaVcOF9v4LMT-snG2Dd1c0Kz_r_YUh3MS5LlKsKEbNK9A-axsbLNyAA85JOQKZjI-HkYgLcqu9-Fix7eUUUFX-TznbW1bcKVts_g0R_NLJKEmNqN57kwrOT1Lemf0A0MvjpO2zpdz2PWzS_lLTGVOmT_uaLhSzEbqEry8J9wUgXLF",
-    tags: ["Node.js", "Docker"],
+    tags: ["Node.js", "Express", "Redis", "Docker"],
     links: { demo: "#" }
   },
   {
     id: 4,
-    title: "SaaS Boilerplate Core",
-    description: "Comprehensive backend scaffold for multi-tenant applications with RBAC and stripe integration.",
+    title: "Operations Analytics Dashboard",
+    description: "Created a real-time dashboard to visualize operational KPIs, system health, and usage trends for leadership teams. Built with React, TypeScript, and a backend service connected to PostgreSQL. The solution enabled faster data-driven decisions and improved visibility across teams.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC4DV-FJcJbk9Pti-JILOqP3lcLXSN-6WkceJe-MJ2uGiQM9ASg4k4ixTNFuTBq1BSGEib8HctXDvCjIIyYHMbKpycywoVUgyMpTCRXAh_QI3IdVzockpIPhzmgsdt9OSsfMhQi2EsebrHoJguR_OIP7jmpVxy_z_4vd8p_VIX_kN4F-o_hzv0QUBo630qAhw-W2tA40Z-_TdeKU7ejtyNnN_vSPIyK9Ynci_fJihKUVyTeIXb1gfCE7cwXVemRTc7n6gVe1Dn9kOtq",
-    tags: ["PostgreSQL", "Redis"],
+    tags: ["React", "TypeScript", "PostgreSQL"],
     links: { caseStudy: "#" },
     size: 'large'
   }
@@ -92,23 +97,23 @@ const EXPERIENCE: Experience[] = [
     role: "Senior Software Engineer",
     company: "Inova IT Systems, Colombo",
     period: "2021 — Present",
-    description: "Leading a team of 5 developers in building cloud-native banking solutions. Reduced deployment latency by 40% using container orchestration.",
+    description: "Leading full-stack architecture and delivery for modern web and cloud services, focusing on scalability, API design, and engineering quality.",
     type: 'work'
   },
   {
     id: 2,
-    role: "Software Engineering Intern",
+    role: "Associate Software Engineer",
     company: "99x Technologies, Sri Lanka",
     period: "2019 — 2021",
-    description: "Contributed to the development of microservices for a Scandinavian retail client. Optimized database queries resulting in a 15% performance gain.",
+    description: "Built and maintained API-driven services and frontend modules for international products, improving reliability and delivery speed.",
     type: 'work'
   },
   {
     id: 3,
     role: "BSc. in Software Engineering",
     company: "Informatics Institute of Technology (IIT)",
-    period: "2016 — 2020",
-    description: "Specialized in Enterprise Application Development. Graduated with First Class Honours.",
+    period: "2020",
+    description: "Completed software engineering studies with a strong focus on architecture, distributed systems, and practical product development.",
     type: 'education'
   }
 ];
@@ -133,9 +138,7 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
+    { name: 'Project', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -216,6 +219,75 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
 };
 
 const Hero = () => {
+  const rotatingTitles = [
+    'Full Stack Developer',
+    'Mobile Developer',
+    'Aspiring Software Engineer',
+    'Tech Enthusiast',
+  ];
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setCurrentTitleIndex((previousIndex) => (previousIndex + 1) % rotatingTitles.length);
+    }, 2200);
+
+    return () => window.clearInterval(intervalId);
+  }, [rotatingTitles.length]);
+
+  const [profileImage, setProfileImage] = useState<string>(() => {
+    if (typeof window === 'undefined') {
+      return DEFAULT_PROFILE_IMAGE;
+    }
+
+    return window.localStorage.getItem(PROFILE_IMAGE_STORAGE_KEY) || DEFAULT_PROFILE_IMAGE;
+  });
+  const [imageError, setImageError] = useState<string>('');
+
+  const handleProfileImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+
+    if (!file) {
+      return;
+    }
+
+    if (!file.type.startsWith('image/')) {
+      setImageError('Please select a valid image file.');
+      return;
+    }
+
+    const maxSizeBytes = 2 * 1024 * 1024;
+    if (file.size > maxSizeBytes) {
+      setImageError('Image is too large. Please use a file under 2MB.');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      if (typeof result !== 'string') {
+        setImageError('Unable to read that image. Please try another file.');
+        return;
+      }
+
+      setProfileImage(result);
+      window.localStorage.setItem(PROFILE_IMAGE_STORAGE_KEY, result);
+      setImageError('');
+    };
+    reader.onerror = () => {
+      setImageError('Unable to read that image. Please try another file.');
+    };
+    reader.readAsDataURL(file);
+
+    event.target.value = '';
+  };
+
+  const resetProfileImage = () => {
+    setProfileImage(DEFAULT_PROFILE_IMAGE);
+    window.localStorage.removeItem(PROFILE_IMAGE_STORAGE_KEY);
+    setImageError('');
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-12 gap-12 items-center w-full">
@@ -225,12 +297,12 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="md:col-span-7"
         >
-          <span className="blueprint-label mb-4 block">Software Engineer based in Sri Lanka</span>
+          <span className="blueprint-label mb-4 block text-[16px]!">{rotatingTitles[currentTitleIndex]}</span>
           <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface mb-6 leading-[1.1]">
             Naveen Madhawa
           </h1>
           <p className="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
-            Specializing in scalable backend systems and intuitive frontend experiences. I bridge the gap between complex engineering and elegant design.
+            Software Engineer building scalable full-stack web and mobile applications powered by modern cloud services.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#projects" className="px-8 py-4 rounded-xl bg-primary text-surface-container-lowest font-semibold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
@@ -248,13 +320,43 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="md:col-span-5 relative"
         >
-          <div className="aspect-square rounded-3xl overflow-hidden border-12 border-surface-container shadow-2xl relative z-10">
-            <img 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_GJK_1GV4JHXfDPk55PbT_Tly7N__Iils8sYnKZ_6pC6ckMNG3TV2vWacLiWU7fAjYqVSKjzXRisMMyIpzgnK2MwMebmbLF4r9dBGydzn3eLVGp1mp2kjxh0cDG4weHTGiM47hXsYBeUGHRgEo2Sz7P4u6oos9lcB7bDHrhxriBQpxECXadvHXQJxePKOvfT6kzV4V38qNFwaY3GFs22rTEXwGJryfST_rdDegcCPYqsUJvxzEDQ9uLFd_G4O0OFmokaa9SO7mNX" 
-              alt="Professional Portrait" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
+          <div className="profile-avatar-float aspect-square relative z-10">
+            <div className="profile-avatar-glow" />
+            <div className="profile-avatar h-full w-full">
+              <img 
+                src={profileImage}
+                alt="Naveen Madhawa" 
+                className="profile-avatar-image w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-3 items-center z-20 relative">
+            <label
+              htmlFor="profile-image-input"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-surface-container-lowest text-sm font-semibold cursor-pointer hover:opacity-90 transition-opacity"
+            >
+              <Upload size={16} />
+              Change Photo
+            </label>
+            <input
+              id="profile-image-input"
+              type="file"
+              accept="image/*"
+              onChange={handleProfileImageChange}
+              className="hidden"
             />
+            <button
+              type="button"
+              onClick={resetProfileImage}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-outline-variant/30 text-on-surface-variant text-sm font-semibold hover:bg-surface-container-low transition-colors"
+            >
+              <RotateCcw size={16} />
+              Reset
+            </button>
+            {imageError && (
+              <p className="w-full text-sm text-red-500 font-medium">{imageError}</p>
+            )}
           </div>
           {/* Floating Badge */}
           <div className="absolute -bottom-6 -right-6 bg-surface-container-lowest p-5 rounded-2xl shadow-xl border border-outline-variant/10 hidden lg:block z-20">
@@ -282,10 +384,10 @@ const About = () => {
           <div className="sticky top-24">
             <h2 className="text-4xl font-extrabold text-on-surface mb-6">The Journey of an Architect.</h2>
             <p className="text-lg text-on-surface-variant mb-6 leading-relaxed">
-              I am a results-driven Software Engineer from the vibrant tech landscape of Colombo, Sri Lanka. My approach combines the precision of architectural thinking with the agility of modern software development.
+              I am a Software Engineer based in Colombo, Sri Lanka, with 5+ years of experience delivering reliable digital products. I specialize in full-stack development, from modern user interfaces to robust APIs and cloud-backed systems.
             </p>
             <p className="text-lg text-on-surface-variant mb-8 leading-relaxed">
-              My career goal is to contribute to high-impact global projects that leverage cloud-native technologies to solve real-world problems.
+              I bring a strong architecture mindset, clean execution, and close collaboration to help teams build scalable solutions that deliver real business value.
             </p>
             
             <div className="p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm">
@@ -309,10 +411,10 @@ const About = () => {
             <span className="blueprint-label">Technical Arsenal</span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { title: "Languages", icon: <Code2 />, skills: ["Java", "Python", "JavaScript", "SQL"] },
-                { title: "Frameworks", icon: <Layers />, skills: ["Spring Boot", "React", "Node.js"] },
-                { title: "Databases", icon: <Database />, skills: ["MySQL", "MongoDB", "Redis"] },
-                { title: "DevOps & Tools", icon: <Cloud />, skills: ["Docker", "Git", "AWS"] }
+                { title: "Languages", icon: <Code2 />, skills: ["JavaScript", "TypeScript", "Python", "Java", "SQL"] },
+                { title: "Frameworks", icon: <Layers />, skills: ["React", "Node.js", "Express", "React Native", "Spring Boot"] },
+                { title: "Databases", icon: <Database />, skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] },
+                { title: "DevOps & Tools", icon: <Cloud />, skills: ["Docker", "Git", "GitHub Actions", "AWS", "Firebase", "Postman"] }
               ].map((cat, i) => (
                 <motion.div 
                   key={i}
