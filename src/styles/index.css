@@ -44,3 +44,24 @@
     transform: translateY(-8px);
   }
 }
+
+/* Utility to hide native scrollbars while keeping scrolling functional */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Marquee animation: slow, smooth right-to-left loop. */
+@keyframes marquee-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee { position: relative; }
+.marquee-track { display: flex; gap: 1.5rem; align-items: center; }
+.animate-marquee { animation: marquee-left 10s linear infinite; }
+/* Pause animation when hovering the marquee container */
+.marquee:hover .animate-marquee { animation-play-state: paused; }
