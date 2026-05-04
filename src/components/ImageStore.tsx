@@ -4,23 +4,29 @@ import { ImagePlus, Trash2 } from 'lucide-react';
 const IMAGE_STORE_KEY = 'portfolio-image-store';
 const MAX_IMAGES = 12;
 const MAX_FILE_SIZE_BYTES = 2 * 1024 * 1024;
+const DEFAULT_STORED_IMAGES = ['/images/profile.jpg'];
 
 export default function ImageStore() {
   const [images, setImages] = useState<string[]>(() => {
     if (typeof window === 'undefined') {
-      return [];
+      return DEFAULT_STORED_IMAGES;
     }
 
     const storedImages = window.localStorage.getItem(IMAGE_STORE_KEY);
     if (!storedImages) {
-      return [];
+      return DEFAULT_STORED_IMAGES;
     }
 
     try {
       const parsed = JSON.parse(storedImages);
-      return Array.isArray(parsed) ? parsed.filter((value) => typeof value === 'string') : [];
+      if (!Array.isArray(parsed)) {
+        return DEFAULT_STORED_IMAGES;
+      }
+
+      const savedImages = parsed.filter((value) => typeof value === 'string') as string[];
+      return Array.from(new Set([...DEFAULT_STORED_IMAGES, ...savedImages])).slice(0, MAX_IMAGES);
     } catch {
-      return [];
+      return DEFAULT_STORED_IMAGES;
     }
   });
 
