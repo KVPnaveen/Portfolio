@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-sm text-slate-500 sm:px-6 lg:px-8 md:items-center md:justify-center">
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/KVPnaveen"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub — opens in new tab"
@@ -18,7 +18,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/your-username"
+            href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn — opens in new tab"
