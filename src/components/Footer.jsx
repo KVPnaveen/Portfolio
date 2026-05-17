@@ -18,7 +18,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/your-username"
+            href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn — opens in new tab"
