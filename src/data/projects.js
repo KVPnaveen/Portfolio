@@ -1,12 +1,13 @@
 export const projects = [
   {
     id: 1,
-    title: 'Portfolio Website',
-    description: 'A responsive personal portfolio built with React, Vite, and Tailwind CSS to showcase featured work and contact details.',
-    tags: ['React', 'Tailwind CSS', 'Vite'],
+    title: 'Intern Spark – Internship Finder Platform ',
+    description: 'This project was developed as our Project-I Group Project to create a centralized web platform connecting internship seekers, companies, and academic institutions in Sri Lanka.',
+    tags: ['React.js', 'PHP', 'MySQL', 'Tailwind CSS', 'GitHub', 'JWT Authentication'],
+
     link: '#contact',
     github: 'https://github.com/KVPnaveen/architect.io-portfolio',
-    image: null,
+    image: '/images/2ndproject.png',
   },
   {
     id: 2,
