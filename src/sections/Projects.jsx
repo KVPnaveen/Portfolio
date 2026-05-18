@@ -12,7 +12,7 @@ const Projects = () => {
     <section id="projects" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div className="text-center">
         <div className="mx-auto inline-block">
-          <p className="text-lg font-bold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-400">
+          <p className="text-lg font-bold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
             My Projects
           </p>
         </div>
@@ -26,7 +26,7 @@ const Projects = () => {
                 href={project.image}
                 target="_blank"
                 rel="noreferrer"
-                className="block overflow-hidden rounded-t-3xl bg-slate-100 p-2 dark:bg-slate-800/60"
+                className="block overflow-hidden rounded-t-3xl bg-slate-200/50 p-2 dark:bg-slate-700/40"
               >
                 <img
                   src={project.image}
@@ -36,13 +36,13 @@ const Projects = () => {
               </a>
             )}
             <div className="px-7 pb-7 pt-6">
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{project.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-100">{project.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
                 {toShortDescription(project.description)}
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {(project.tags || []).map((tag) => (
-                  <span key={tag} className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-400/15 dark:text-indigo-200">
+                  <span key={tag} className="rounded-full bg-blue-100/60 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-900/30 dark:text-blue-200">
                     {tag}
                   </span>
                 ))}
@@ -54,7 +54,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`Open ${project.title} GitHub repository`}
-                    className="rounded-full border border-slate-200/80 p-2 text-slate-600 transition hover:-translate-y-0.5 hover:text-indigo-600 dark:border-slate-700/80 dark:text-slate-300 dark:hover:text-indigo-300"
+                    className="rounded-full border border-slate-300/60 p-2 text-slate-600 transition hover:-translate-y-0.5 hover:text-blue-600 dark:border-slate-600/60 dark:text-slate-400 dark:hover:text-blue-300"
                   >
                     <FaGithub className="h-5 w-5" />
                   </a>
@@ -65,7 +65,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`Open ${project.title} LinkedIn page`}
-                    className="rounded-full border border-slate-200/80 p-2 text-slate-600 transition hover:-translate-y-0.5 hover:text-sky-600 dark:border-slate-700/80 dark:text-slate-300 dark:hover:text-sky-300"
+                    className="rounded-full border border-slate-300/60 p-2 text-slate-600 transition hover:-translate-y-0.5 hover:text-slate-700 dark:border-slate-600/60 dark:text-slate-400 dark:hover:text-slate-200"
                   >
                     <FaLinkedinIn className="h-5 w-5" />
                   </a>
