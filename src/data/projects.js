@@ -5,6 +5,8 @@ export const projects = [
     description: 'A responsive personal portfolio built with React, Vite, and Tailwind CSS to showcase featured work and contact details.',
     tags: ['React', 'Tailwind CSS', 'Vite'],
     link: '#contact',
+    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    image: null,
   },
   {
     id: 2,
@@ -12,6 +14,8 @@ export const projects = [
     description: 'A clean dashboard concept for tracking priorities, progress, and daily work with a simple card-based interface.',
     tags: ['UI Design', 'Dashboard', 'Productivity'],
     link: '#projects',
+    github: null,
+    image: null,
   },
   {
     id: 3,
@@ -19,5 +23,17 @@ export const projects = [
     description: 'A modern landing page layout for a creative agency with bold typography, strong calls to action, and section-based storytelling.',
     tags: ['Landing Page', 'Branding', 'Responsive'],
     link: '#about',
+    github: null,
+    image: null,
+  },
+  {
+    id: 4,
+    title: 'SafeWalk-Personal Safety Mobile App',
+    description: 'SafeWalk is a React Native mobile application designed to support personal safety for solo walkers. The app includes trusted contact management, walk session features, and a clean user-friendly interface.',
+    tags: ['React Native', 'Firebase'],
+    link: '#projects',
+    github: 'https://github.com/Lavakeesan/SafeWalk-Mobile-App',
+    linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
+    image: '/images/safewalk.jpeg',
   },
 ];
