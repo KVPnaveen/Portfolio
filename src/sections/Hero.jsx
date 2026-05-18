@@ -10,7 +10,7 @@ const ROTATING_TITLES = [
 ];
 
 const Hero = () => {
-  const [profileImage] = useState(() => localStorage.getItem('profileImage') || '/images/profile.svg');
+  const [profileImage] = useState(() => localStorage.getItem('profileImage') || '/images/new1.jpg');
   const [activeTitleIndex, setActiveTitleIndex] = useState(0);
 
   useEffect(() => {
