@@ -10,7 +10,7 @@ const ROTATING_TITLES = [
 ];
 
 const Hero = () => {
-  const [profileImage] = useState(() => localStorage.getItem('profileImage') || '/images/profile.svg');
+  const [profileImage] = useState(() => localStorage.getItem('profileImage') || '/images/new1.jpg');
   const [activeTitleIndex, setActiveTitleIndex] = useState(0);
 
   useEffect(() => {
@@ -23,15 +23,15 @@ const Hero = () => {
 
   return (
     <section id="home" className="mx-auto max-w-6xl px-4 pb-14 pt-16 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
-      <div className="relative overflow-hidden rounded-4xl border border-slate-200/80 bg-white/70 p-6 shadow-[0_20px_65px_-30px_rgba(15,23,42,0.35)] backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/50 dark:shadow-[0_30px_80px_-35px_rgba(2,6,23,0.8)] sm:p-8 lg:p-10">
+      <div className="relative overflow-hidden rounded-4xl border border-slate-300/50 bg-linear-to-br from-slate-100/80 via-blue-50/50 to-slate-100/80 p-6 shadow-[0_20px_65px_-30px_rgba(15,23,42,0.2)] backdrop-blur-xl dark:border-slate-700/50 dark:bg-linear-to-br dark:from-slate-800/60 dark:via-blue-950/30 dark:to-slate-800/60 dark:shadow-[0_30px_80px_-35px_rgba(2,6,23,0.5)] sm:p-8 lg:p-10">
         <div aria-hidden className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-10 top-0 h-48 w-48 rounded-full bg-indigo-500/15 blur-3xl dark:bg-indigo-500/25" />
-          <div className="absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-sky-500/10 blur-3xl dark:bg-sky-500/20" />
+          <div className="absolute -left-10 top-0 h-48 w-48 rounded-full bg-blue-400/10 blur-3xl dark:bg-blue-500/15" />
+          <div className="absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-slate-400/10 blur-3xl dark:bg-slate-400/10" />
         </div>
 
         <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <div className="h-6 overflow-hidden text-sm font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-300">
+            <div className="h-6 overflow-hidden text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
             <span
               key={activeTitleIndex}
               className="inline-block animate-[fadeSlide_2.2s_ease-in-out]"
@@ -39,7 +39,7 @@ const Hero = () => {
               {ROTATING_TITLES[activeTitleIndex]}
             </span>
             </div>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-slate-100">
+            <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl lg:text-6xl dark:text-slate-50">
               Naveen Madhawa
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">

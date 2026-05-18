@@ -1,14 +1,14 @@
 const Footer = () => {
   return (
-    <footer className="border-t border-slate-200 bg-white/80 py-8 dark:border-slate-800 dark:bg-slate-950/80">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-sm text-slate-500 sm:px-6 lg:px-8 md:items-center md:justify-center">
+    <footer className="border-t border-slate-300/50 bg-white/60 py-8 dark:border-slate-700/50 dark:bg-slate-800/60">
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-sm text-slate-600 sm:px-6 lg:px-8 md:items-center md:justify-center dark:text-slate-400">
         <div className="flex items-center gap-4">
           <a
             href="https://github.com/KVPnaveen"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub — opens in new tab"
-            className="inline-flex items-center gap-2 text-slate-700 transition-colors hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
+            className="inline-flex items-center gap-2 text-slate-700 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
           >
             <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <title>GitHub</title>
@@ -22,7 +22,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn — opens in new tab"
-            className="inline-flex items-center gap-2 text-blue-700 transition-colors hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-200"
+            className="inline-flex items-center gap-2 text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           >
             <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <title>LinkedIn</title>
