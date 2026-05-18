@@ -10,7 +10,7 @@ const ROTATING_TITLES = [
 ];
 
 const Hero = () => {
-  const [profileImage, setProfileImage] = useState(() => localStorage.getItem('profileImage') || '/images/profile.svg');
+  const [profileImage] = useState(() => localStorage.getItem('profileImage') || '/images/profile.svg');
   const [activeTitleIndex, setActiveTitleIndex] = useState(0);
 
   useEffect(() => {
@@ -20,19 +20,6 @@ const Hero = () => {
 
     return () => window.clearInterval(intervalId);
   }, []);
-
-  const handleImageUpload = (event) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const imageData = e.target?.result;
-        setProfileImage(imageData);
-        localStorage.setItem('profileImage', imageData);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   return (
     <section id="home" className="mx-auto max-w-6xl px-4 pb-14 pt-16 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
@@ -76,16 +63,6 @@ const Hero = () => {
               showStatus
               isOnline
             />
-            <label className="cursor-pointer rounded-full bg-linear-to-r from-indigo-500 to-blue-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">
-              Change Photo
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-                aria-label="Change profile picture"
-              />
-            </label>
           </div>
         </div>
       </div>
