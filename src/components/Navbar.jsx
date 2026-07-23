@@ -49,7 +49,7 @@ const Navbar = () => {
         <nav className={cn(
           'mx-auto flex max-w-6xl items-center justify-between rounded-2xl border px-4 py-3 backdrop-blur-xl transition-all duration-300 sm:px-6 lg:px-8',
           scrolled 
-            ? 'border-black/5 bg-[#FAFAFA]/85 shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:border-white/5 dark:bg-[#080808]/85 dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)]' 
+            ? 'border-black/5 bg-[#F3F4F6]/90 shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:border-white/5 dark:bg-[#0F172A]/85 dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)]' 
             : 'border-transparent bg-transparent dark:border-transparent dark:bg-transparent'
         )}>
           {/* Logo */}
@@ -118,7 +118,7 @@ const Navbar = () => {
  
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="mx-auto mt-2 max-w-6xl animate-in fade-in slide-in-from-top-2 rounded-2xl border border-black/10 bg-[#FAFAFA]/95 dark:border-white/10 dark:bg-[#080808]/95 px-4 py-4 shadow-2xl backdrop-blur-xl md:hidden">
+          <div className="mx-auto mt-2 max-w-6xl animate-in fade-in slide-in-from-top-2 rounded-2xl border border-black/10 bg-[#F3F4F6]/95 dark:border-white/10 dark:bg-[#0F172A]/95 px-4 py-4 shadow-2xl backdrop-blur-xl md:hidden">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <a

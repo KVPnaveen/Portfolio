@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa
 
 const Footer = () => {
   return (
-    <footer className="border-t border-black/5 bg-[#FAFAFA]/85 dark:border-white/5 dark:bg-[#080808]/85 py-12 relative z-10 transition-colors duration-300">
+    <footer className="border-t border-black/5 bg-[#F3F4F6]/85 dark:border-white/5 dark:bg-[#0F172A]/85 py-12 relative z-10 transition-colors duration-300">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           {/* Brand/Logo Area */}
