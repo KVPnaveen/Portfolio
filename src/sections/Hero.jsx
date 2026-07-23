@@ -55,20 +55,20 @@ const Hero = () => {
           </p>
  
           {/* Call-to-actions */}
-          <div className="mt-10 flex flex-wrap gap-4.5">
+          <div className="mt-10 flex flex-wrap gap-4.5 w-full sm:w-auto">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#FF8A00] px-7 py-4 text-base font-bold text-white shadow-[0_4px_20px_rgba(255,138,0,0.3)] transition-all duration-300 hover:bg-[#ff9d24] hover:shadow-[0_4px_30px_rgba(255,138,0,0.5)] hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#FF8A00] px-6 py-3.5 text-base font-bold text-white shadow-[0_4px_20px_rgba(255,138,0,0.3)] transition-all duration-300 hover:bg-[#ff9d24] hover:shadow-[0_4px_30px_rgba(255,138,0,0.5)] hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap min-w-[170px]"
             >
               <span>View Projects</span>
-              <FaArrowRight className="h-4 w-4" />
+              <FaArrowRight className="h-4 w-4 shrink-0" />
             </a>
  
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-black/5 text-slate-700 hover:bg-black/10 hover:text-black dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-black/10 bg-black/5 px-6 py-3.5 text-base font-bold text-slate-700 hover:bg-black/10 hover:text-black dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap min-w-[170px]"
             >
-              <FaEnvelope className="h-4 w-4" />
+              <FaEnvelope className="h-4 w-4 shrink-0" />
               <span>Contact Me</span>
             </a>
           </div>
