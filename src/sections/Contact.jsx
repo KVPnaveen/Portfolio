@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Button from '../components/Button';
+import { FaPaperPlane } from 'react-icons/fa';
 
 // Initialize EmailJS with your public key
-// Get credentials from: https://dashboard.emailjs.com/admin
 emailjs.init('gz6MEcZFQaUA0ZVN8');
 
 const Contact = () => {
@@ -39,16 +39,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-      <div className="rounded-3xl border border-slate-400/30 bg-linear-to-br from-slate-200/40 to-blue-100/30 px-6 py-10 text-slate-800 shadow-[0_25px_70px_-35px_rgba(15,23,42,0.15)] backdrop-blur-lg dark:border-slate-600/40 dark:bg-linear-to-br dark:from-slate-700/40 dark:to-blue-950/30 dark:text-slate-100 lg:px-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
+    <section id="contact" className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8 relative z-10">
+      <div className="text-center mb-14">
+        <h2 className="text-3xl font-extrabold uppercase tracking-[0.2em] text-orange-500 sm:text-4xl">
           Contact Me
-        </p>
-        <h2 className="mt-4 text-3xl font-bold tracking-tight">
-          Let's get in touch.
         </h2>
+        <p className="mt-5 text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-[26px]">
+          Let's get in touch.
+        </p>
+      </div>
 
-        <form ref={form} className="mt-8 space-y-5" onSubmit={sendEmail}>
+      <div className="glass-card max-w-2xl mx-auto rounded-3xl p-8 lg:p-12 border border-black/5 bg-white/80 shadow-2xl dark:bg-[#0f0f0f]/60 dark:border-white/5 dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300">
+        <form ref={form} className="space-y-6 text-left" onSubmit={sendEmail}>
           {/* Hidden field for recipient email */}
           <input
             type="hidden"
@@ -57,7 +59,7 @@ const Contact = () => {
           />
 
           <div>
-            <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label htmlFor="name" className="mb-3 block text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 sm:text-base">
               Name
             </label>
             <input
@@ -66,12 +68,12 @@ const Contact = () => {
               type="text"
               placeholder="Your name"
               required
-              className="w-full rounded-2xl border border-slate-300/50 bg-white/80 px-4 py-3 text-slate-800 placeholder:text-slate-400 outline-none transition dark:border-slate-600/50 dark:bg-slate-800/60 dark:text-slate-100 dark:placeholder:text-slate-500 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 dark:focus:border-blue-400 dark:focus:ring-blue-400/30"
+              className="w-full rounded-2xl border border-black/5 bg-black/[0.02] px-5 py-4 text-base text-slate-900 placeholder:text-slate-400 dark:border-white/5 dark:bg-white/[0.02] dark:text-white dark:placeholder:text-slate-600 outline-none transition duration-300 focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/20 focus:bg-black/[0.04] dark:focus:bg-white/[0.04]"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label htmlFor="email" className="mb-3 block text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 sm:text-base">
               Email
             </label>
             <input
@@ -80,12 +82,12 @@ const Contact = () => {
               type="email"
               placeholder="Your email"
               required
-              className="w-full rounded-2xl border border-slate-300/50 bg-white/80 px-4 py-3 text-slate-800 placeholder:text-slate-400 outline-none transition dark:border-slate-600/50 dark:bg-slate-800/60 dark:text-slate-100 dark:placeholder:text-slate-500 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 dark:focus:border-blue-400 dark:focus:ring-blue-400/30"
+              className="w-full rounded-2xl border border-black/5 bg-black/[0.02] px-5 py-4 text-base text-slate-900 placeholder:text-slate-400 dark:border-white/5 dark:bg-white/[0.02] dark:text-white dark:placeholder:text-slate-600 outline-none transition duration-300 focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/20 focus:bg-black/[0.04] dark:focus:bg-white/[0.04]"
             />
           </div>
 
           <div>
-            <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label htmlFor="message" className="mb-3 block text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 sm:text-base">
               Message
             </label>
             <textarea
@@ -94,16 +96,21 @@ const Contact = () => {
               rows="5"
               placeholder="Write your message here..."
               required
-              className="w-full rounded-2xl border border-slate-300/50 bg-white/80 px-4 py-3 text-slate-800 placeholder:text-slate-400 outline-none transition dark:border-slate-600/50 dark:bg-slate-800/60 dark:text-slate-100 dark:placeholder:text-slate-500 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 dark:focus:border-blue-400 dark:focus:ring-blue-400/30"
+              className="w-full rounded-2xl border border-black/5 bg-black/[0.02] px-5 py-4 text-base text-slate-900 placeholder:text-slate-400 dark:border-white/5 dark:bg-white/[0.02] dark:text-white dark:placeholder:text-slate-600 outline-none transition duration-300 focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/20 focus:bg-black/[0.04] dark:focus:bg-white/[0.04]"
             />
           </div>
 
-          <Button type="submit" className="w-full" disabled={status === 'sending'}>
-            {status === 'sending' ? 'Sending...' : 'Send Message'}
-          </Button>
+          <button 
+            type="submit" 
+            disabled={status === 'sending'}
+            className="w-full py-4.5 rounded-2xl bg-[#FF8A00] text-base font-bold text-white shadow-[0_4px_20px_rgba(255,138,0,0.25)] transition-all duration-300 hover:bg-[#ff9d24] hover:shadow-[0_4px_30px_rgba(255,138,0,0.45)] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
+            <FaPaperPlane className="h-4 w-4" />
+          </button>
 
           {feedback ? (
-            <p className={`text-sm ${status === 'success' ? 'text-emerald-300' : 'text-rose-300'}`}>
+            <p className={`text-center text-base font-semibold mt-4 ${status === 'success' ? 'text-emerald-400' : 'text-rose-400'}`}>
               {feedback}
             </p>
           ) : null}

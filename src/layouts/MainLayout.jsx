@@ -1,21 +1,53 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useEffect, useState } from 'react';
 
 const MainLayout = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      {/* Background gradient decorations */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-x-0 top-0 h-112 bg-linear-to-b from-indigo-500/10 via-blue-500/5 to-transparent dark:from-indigo-400/15 dark:via-blue-400/10" />
-        <div className="absolute -left-24 top-52 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl dark:bg-violet-500/20" />
-        <div className="absolute -right-20 top-112 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl dark:bg-sky-500/20" />
+    <div className="relative min-h-screen overflow-x-hidden bg-[#FAFAFA] text-slate-900 dark:bg-[#080808] dark:text-slate-100 selection:bg-orange-500/30 selection:text-white transition-colors duration-300">
+      {/* Interactive mouse follow glow overlay */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-30 opacity-45 transition-opacity duration-300 hidden lg:block"
+        style={{
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 138, 0, 0.05), rgba(0, 210, 255, 0.04) 40%, transparent 80%)`
+        }}
+      />
+
+      {/* Background Watermark Logos & Glow Orbs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {/* Glow Orbs */}
+        <div className="absolute -left-32 top-10 h-[40rem] w-[40rem] rounded-full glow-orb-orange blur-[120px] animate-float-slow" />
+        <div className="absolute -right-40 top-96 h-[50rem] w-[50rem] rounded-full glow-orb-cyan blur-[150px] animate-float-medium" />
+        <div className="absolute left-[20%] bottom-10 h-[45rem] w-[45rem] rounded-full glow-orb-orange blur-[130px] animate-float-slow" />
+        
+        {/* Subtle Watermarks (5% opacity) */}
+        <img 
+          src="/images/NM.png" 
+          alt="" 
+          className="logo-watermark w-[550px] h-[550px] left-[-150px] top-[15%] opacity-[0.05]"
+        />
+        <img 
+          src="/images/NM.png" 
+          alt="" 
+          className="logo-watermark w-[650px] h-[650px] right-[-200px] bottom-[20%] opacity-[0.05]"
+        />
       </div>
 
       {/* Fixed Navbar with built-in spacer */}
       <Navbar />
 
-      {/* Main content - will start below navbar due to spacer in Navbar component */}
+      {/* Main content */}
       <main className="relative z-10">
         <Outlet />
       </main>
