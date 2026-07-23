@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FaArrowRight, FaEnvelope } from 'react-icons/fa';
+import { FaArrowRight, FaEnvelope, FaDownload } from 'react-icons/fa';
 
 const ROTATING_TITLES = [
   'Full Stack Developer',
@@ -62,6 +62,18 @@ const Hero = () => {
             >
               <span>View Projects</span>
               <FaArrowRight className="h-4 w-4 shrink-0" />
+            </a>
+
+            <a
+              href="/assets/Naveen_Madhawa_CV.pdf"
+              download="Naveen_Madhawa_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download Naveen Madhawa's CV"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#FF8A00]/30 bg-[#FF8A00]/5 px-6 py-3.5 text-base font-bold text-slate-800 dark:text-slate-200 hover:bg-[#FF8A00]/10 hover:border-[#FF8A00]/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap min-w-[170px]"
+            >
+              <FaDownload className="h-4 w-4 shrink-0 text-[#FF8A00]" />
+              <span>Download CV</span>
             </a>
  
             <a

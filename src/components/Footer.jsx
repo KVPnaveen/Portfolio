@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -30,7 +30,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub — opens in new tab"
-              className="rounded-full border border-black/10 bg-black/5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30"
+              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
             >
               <FaGithub className="h-4 w-4" />
             </a>
@@ -40,9 +40,29 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn — opens in new tab"
-              className="rounded-full border border-black/10 bg-black/5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30"
+              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
             >
               <FaLinkedinIn className="h-4 w-4" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/naveen_vidanapathirana?igsh=MTM5cGc0YWJxYWxydg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram — opens in new tab"
+              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
+            >
+              <FaInstagram className="h-4 w-4" />
+            </a>
+
+            <a
+              href="https://www.facebook.com/share/1BYTbC69jj/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook — opens in new tab"
+              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
+            >
+              <FaFacebookF className="h-4 w-4" />
             </a>
           </div>
         </div>

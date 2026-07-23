@@ -196,3 +196,23 @@
 .marquee:hover .animate-marquee {
   animation-play-state: paused;
 }
+
+/* Splash Screen Animations */
+@keyframes loadingProgress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes splashFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-splash-fade-in {
+  animation: splashFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-loading-bar {
+  animation: loadingProgress 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
