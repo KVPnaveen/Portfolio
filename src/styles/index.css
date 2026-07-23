@@ -129,16 +129,29 @@
   position: absolute;
   pointer-events: none;
   z-index: -10;
+  opacity: 0.015;
+  filter: blur(4px) drop-shadow(0 0 50px rgba(0, 210, 255, 0.2));
+}
+
+.dark .logo-watermark {
   opacity: 0.025;
   filter: blur(4px) drop-shadow(0 0 50px rgba(0, 210, 255, 0.5));
 }
 
 /* Glow orb gradients */
 .glow-orb-cyan {
-  background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(0, 114, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.08) 0%, rgba(0, 114, 255, 0) 70%);
 }
 
 .glow-orb-orange {
+  background: radial-gradient(circle, rgba(255, 138, 0, 0.06) 0%, rgba(255, 80, 0, 0) 70%);
+}
+
+.dark .glow-orb-cyan {
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(0, 114, 255, 0) 70%);
+}
+
+.dark .glow-orb-orange {
   background: radial-gradient(circle, rgba(255, 138, 0, 0.12) 0%, rgba(255, 80, 0, 0) 70%);
 }
 
