@@ -2,9 +2,9 @@ import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa
 
 const Footer = () => {
   return (
-    <footer className="border-t border-black/5 bg-[#F3F4F6]/85 dark:border-white/5 dark:bg-[#0F172A]/85 py-12 relative z-10 transition-colors duration-300">
+    <footer className="border-t border-black/5 bg-[#F3F4F6]/85 dark:border-white/5 dark:bg-[#0F172A]/85 py-3 sm:py-4 relative z-10 transition-colors duration-300">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
           {/* Brand/Logo Area */}
           <div className="flex items-center gap-3">
             <img 
@@ -30,7 +30,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub — opens in new tab"
-              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
+              className="rounded-full border border-black/10 bg-black/5 p-2 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
             >
               <FaGithub className="h-4 w-4" />
             </a>
@@ -40,7 +40,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn — opens in new tab"
-              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
+              className="rounded-full border border-black/10 bg-black/5 p-2 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
             >
               <FaLinkedinIn className="h-4 w-4" />
             </a>
@@ -50,7 +50,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram — opens in new tab"
-              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
+              className="rounded-full border border-black/10 bg-black/5 p-2 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
             >
               <FaInstagram className="h-4 w-4" />
             </a>
@@ -60,14 +60,14 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook — opens in new tab"
-              className="rounded-full border border-black/10 bg-black/5 p-2.5 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
+              className="rounded-full border border-black/10 bg-black/5 p-2 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 transition-all duration-300 hover:bg-orange-500/10 hover:text-orange-500 hover:-translate-y-0.5 hover:border-orange-500/30 flex items-center justify-center"
             >
               <FaFacebookF className="h-4 w-4" />
             </a>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-black/5 dark:border-white/5 pt-8 flex flex-col items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-600 md:flex-row">
+        <div className="mt-2 border-t border-black/5 dark:border-white/5 pt-2 flex flex-col items-center justify-between gap-2 text-sm text-slate-500 dark:text-slate-600 md:flex-row">
           <p>© {new Date().getFullYear()} Naveen Madhawa. All rights reserved.</p>
         </div>
       </div>
