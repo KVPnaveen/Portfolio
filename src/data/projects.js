@@ -4,9 +4,9 @@ export const projects = [
     title: 'Intern Spark – Internship Finder Platform ',
     description: 'This project was developed as our Project-I Group Project to create a centralized web platform connecting internship seekers, companies, and academic institutions in Sri Lanka.',
     tags: ['React.js', 'PHP', 'MySQL', 'Tailwind CSS', 'GitHub', 'JWT Authentication'],
-
     link: '#contact',
-    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    github: 'https://github.com/Kavisheak/InternSpark2.2',
+    linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: '/images/2ndproject.png',
   },
   {
@@ -15,7 +15,8 @@ export const projects = [
     description: 'A clean dashboard concept for tracking priorities, progress, and daily work with a simple card-based interface.',
     tags: ['UI Design', 'Dashboard', 'Productivity'],
     link: '#projects',
-    github: null,
+    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: null,
   },
   {
@@ -24,7 +25,8 @@ export const projects = [
     description: 'A modern landing page layout for a creative agency with bold typography, strong calls to action, and section-based storytelling.',
     tags: ['Landing Page', 'Branding', 'Responsive'],
     link: '#about',
-    github: null,
+    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: null,
   },
   {
@@ -44,6 +46,7 @@ export const projects = [
     tags: ['React.js', 'Node.js', 'PostgreSQL', 'Docker'],
     link: '#projects',
     github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: null,
   },
   {
@@ -53,6 +56,7 @@ export const projects = [
     tags: ['TypeScript', 'React', 'Tailwind CSS', 'Gemini API'],
     link: '#projects',
     github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: null,
   },
 ];
