@@ -26,7 +26,8 @@ const Navbar = () => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
+          const midPoint = window.innerHeight / 2;
+          if (rect.top <= midPoint && rect.bottom >= midPoint) {
             setActiveSection(section);
             break;
           }
@@ -35,6 +36,7 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -139,9 +141,6 @@ const Navbar = () => {
           </div>
         )}
       </header>
-
-      {/* Spacer to prevent content overlap */}
-      <div className="h-24 sm:h-28" />
     </>
   );
 };

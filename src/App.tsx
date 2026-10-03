@@ -234,7 +234,7 @@ const Hero = () => {
   }, [rotatingTitles.length]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 px-6 md:px-12 max-w-7xl mx-auto">
+    <section id="home" className="min-h-screen flex items-center pt-6 sm:pt-8 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-12 gap-12 items-center w-full">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
