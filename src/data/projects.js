@@ -11,23 +11,24 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'Task Dashboard',
-    description: 'A clean dashboard concept for tracking priorities, progress, and daily work with a simple card-based interface.',
-    tags: ['UI Design', 'Dashboard', 'Productivity'],
+    title: 'TravelEase - Full-Stack Travel Booking Platform ',
+    description: 'A modern travel booking platform that allows users to explore tour packages, search destinations, manage bookings, and enjoy a seamless booking experience through a responsive and user-friendly interface.',
+    tags: ['React.js', 'Django', 'MySQL', 'GitHub', 'JWT Authentication'],
     link: '#projects',
-    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    github: 'https://github.com/ChalanaPiyumika/TravelEase',
     linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
-    image: null,
+    image: '/images/3rdproject.jpg',
   },
   {
     id: 3,
-    title: 'Agency Landing Page',
-    description: 'A modern landing page layout for a creative agency with bold typography, strong calls to action, and section-based storytelling.',
-    tags: ['Landing Page', 'Branding', 'Responsive'],
+    title: 'RedShan Flora – 3D Artificial Flower Customization E-Platform',
+    description: 'A web-based artificial flower e-commerce platform that allows customers to browse and purchase products, customize bouquets, manage orders, and track deliveries. The system also provides role-based access, online payments, and an interactive 360° flower visualization experience.',
+    tags: ['React.js', 'Spring Boot', 'Java', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS', 'REST API', 'Git/GitHub'],
     link: '#about',
-    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    githubFrontend: 'https://github.com/VindyaSS/RedShan360-3D-Artificial-Flower-Customization-E-Platform',
+    githubBackend: 'https://github.com/KVPnaveen/Redshan-Backend',
     linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
-    image: null,
+    image: '/images/4thproject.jpg',
   },
   {
     id: 4,
@@ -39,6 +40,7 @@ export const projects = [
     linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: '/images/safewalk.jpeg',
   },
+  /*
   {
     id: 5,
     title: 'Cloud Commerce Platform',
@@ -59,4 +61,5 @@ export const projects = [
     linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: null,
   },
+  */
 ];
