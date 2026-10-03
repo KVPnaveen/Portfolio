@@ -55,8 +55,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = () => {
+  const handleNavClick = (e, href) => {
     setIsOpen(false);
+    if (href) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -70,7 +77,11 @@ const Navbar = () => {
             : 'border-transparent bg-transparent dark:border-transparent dark:bg-transparent'
         )}>
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2.5 text-lg font-bold tracking-tight transition duration-300 hover:opacity-90">
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, '#home')}
+            className="flex items-center gap-2.5 text-lg font-bold tracking-tight transition duration-300 hover:opacity-90"
+          >
             <img 
               src="/images/NM.png" 
               alt="Naveen Madhawa Logo" 
@@ -87,6 +98,7 @@ const Navbar = () => {
               <a 
                 key={item.label} 
                 href={item.href} 
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={cn(
                   'relative text-base font-medium transition duration-200 py-1.5',
                   activeSection === item.href.slice(1)
@@ -141,7 +153,7 @@ const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={handleNavClick}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
                     'rounded-2xl px-4 py-3 text-base font-medium transition duration-200',
                     activeSection === item.href.slice(1)
