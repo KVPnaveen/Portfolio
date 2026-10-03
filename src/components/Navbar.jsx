@@ -22,13 +22,28 @@ const Navbar = () => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.href.slice(1));
       
+      const midPoint = window.innerHeight / 2;
+      let matched = false;
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          const midPoint = window.innerHeight / 2;
           if (rect.top <= midPoint && rect.bottom >= midPoint) {
             setActiveSection(section);
+            matched = true;
+            break;
+          }
+        }
+      }
+
+      if (!matched) {
+        // Check for secondary project pages
+        const projectPageElements = document.querySelectorAll('[id^="projects-page-"]');
+        for (const el of projectPageElements) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= midPoint && rect.bottom >= midPoint) {
+            setActiveSection('projects');
             break;
           }
         }

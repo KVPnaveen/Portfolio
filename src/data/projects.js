@@ -37,4 +37,22 @@ export const projects = [
     linkedin: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile',
     image: '/images/safewalk.jpeg',
   },
+  {
+    id: 5,
+    title: 'Cloud Commerce Platform',
+    description: 'A full-stack e-commerce platform with real-time inventory management, secure payments, and microservice backend deployed on cloud architecture.',
+    tags: ['React.js', 'Node.js', 'PostgreSQL', 'Docker'],
+    link: '#projects',
+    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    image: null,
+  },
+  {
+    id: 6,
+    title: 'AI Portfolio & Resume Builder',
+    description: 'An interactive web app that uses generative AI tools to build personal portfolios, generate resume bullet points, and optimize project descriptions.',
+    tags: ['TypeScript', 'React', 'Tailwind CSS', 'Gemini API'],
+    link: '#projects',
+    github: 'https://github.com/KVPnaveen/architect.io-portfolio',
+    image: null,
+  },
 ];
