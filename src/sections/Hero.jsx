@@ -20,7 +20,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 relative z-10">
+    <section id="home" className="min-h-screen w-full flex items-center justify-center pt-20 pb-8 px-4 sm:px-6 lg:px-8 snap-start snap-always relative z-10">
       <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
         {/* Left Column: Text & CTAs */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">

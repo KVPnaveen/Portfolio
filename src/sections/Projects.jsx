@@ -18,8 +18,8 @@ const Projects = () => {
 
       <div className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
-          <div 
-            key={project.id} 
+          <div
+            key={project.id}
             className="group glass-card rounded-3xl overflow-hidden flex flex-col h-full bg-white/80 border border-black/5 shadow-2xl hover:border-orange-500/20 dark:bg-[#0f0f0f]/50 dark:border-white/5 dark:hover:border-orange-500/20 transition-all duration-300"
           >
             {project.image ? (
@@ -42,20 +42,20 @@ const Projects = () => {
                 <span className="text-xs uppercase font-mono tracking-widest text-slate-500 dark:text-slate-600">No Preview Available</span>
               </div>
             )}
-            
+
             <div className="p-6 flex flex-col flex-grow text-left">
               <h3 className="text-[21px] sm:text-[23px] font-bold text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors duration-200">
                 {project.title}
               </h3>
-              
+
               <p className="mt-4 text-[14px] sm:text-[16px] text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                 {toShortDescription(project.description)}
               </p>
-              
+
               <div className="mt-6 flex flex-wrap gap-1.5">
                 {(project.tags || []).map((tag) => (
-                  <span 
-                    key={tag} 
+                  <span
+                    key={tag}
                     className="rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 px-2.5 py-0.5 text-[12px] sm:text-[14px] font-bold text-slate-700 dark:text-slate-300"
                   >
                     {tag}

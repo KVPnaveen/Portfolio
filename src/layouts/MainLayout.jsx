@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 
 const MainLayout = () => {
@@ -57,9 +56,6 @@ const MainLayout = () => {
       <main className="relative z-10">
         <Outlet />
       </main>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
