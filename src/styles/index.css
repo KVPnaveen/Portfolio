@@ -14,10 +14,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: #F3F4F6;
     transition: background-color 0.3s ease;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-snap-type: y mandatory;
+    }
   }
 
   html.dark {

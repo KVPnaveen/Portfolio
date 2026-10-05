@@ -237,35 +237,12 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center pt-6 sm:pt-8 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-12 gap-12 items-center w-full">
         <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="md:col-span-7"
-        >
-          <span className="blueprint-label mb-4 block text-[16px]!">{rotatingTitles[currentTitleIndex]}</span>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface mb-6 leading-[1.1]">
-            Naveen Madhawa
-          </h1>
-          <p className="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
-            Software Engineer building scalable full-stack web and mobile applications powered by modern cloud services.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="#projects" className="px-8 py-4 rounded-xl bg-primary text-surface-container-lowest font-semibold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
-              View Projects
-            </a>
-            <a href="#contact" className="px-8 py-4 rounded-xl border border-outline-variant/30 text-primary font-semibold hover:bg-surface-container-low transition-all">
-              Contact Me
-            </a>
-          </div>
-        </motion.div>
-
-        <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="md:col-span-5 relative"
+          className="order-1 md:order-2 md:col-span-5 relative flex justify-center"
         >
-          <div className="profile-avatar-float aspect-square relative z-10">
+          <div className="profile-avatar-float aspect-square relative z-10 w-48 h-48 md:w-full md:h-full">
             <div className="profile-avatar-glow" />
             <div className="profile-avatar h-full w-full">
               <img 
@@ -287,6 +264,29 @@ const Hero = () => {
                 <p className="text-xs text-on-surface-variant">Engineering Experience</p>
               </div>
             </div>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="order-2 md:order-1 md:col-span-7 text-center md:text-left flex flex-col items-center md:items-start"
+        >
+          <span className="blueprint-label mb-4 block text-[16px]!">{rotatingTitles[currentTitleIndex]}</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface mb-6 leading-[1.1]">
+            Naveen Madhawa
+          </h1>
+          <p className="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+            Software Engineer building scalable full-stack web and mobile applications powered by modern cloud services.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a href="#projects" className="px-8 py-4 rounded-xl bg-primary text-surface-container-lowest font-semibold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+              View Projects
+            </a>
+            <a href="#contact" className="px-8 py-4 rounded-xl border border-outline-variant/30 text-primary font-semibold hover:bg-surface-container-low transition-all">
+              Contact Me
+            </a>
           </div>
         </motion.div>
       </div>
